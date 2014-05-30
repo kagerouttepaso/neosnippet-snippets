@@ -14,6 +14,10 @@ alias       dd
 options     word
     `strftime("%Y-%m-%d")`
 
+snippet     date_euro
+options     word
+    `strftime("%d/%b/%Y")`
+
 snippet     date_time
 alias       dt
 options     word
@@ -39,3 +43,9 @@ alias       fnamelc
 options     word
     `substitute(bufname('%') =='[Command Line]' ? expand('#:t:r:r:r') : expand('%:t:r:r:r'), '\%(_\(.\)\)', '\u\1', 'g')`${0}
 
+snippet     codeheader
+abbr        CurrentFileName
+options     head
+  Filename : `expand("%")`
+  No : `line(".")`
+  ${1}
